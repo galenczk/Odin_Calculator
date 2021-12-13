@@ -1,26 +1,19 @@
-Get buttons in the right positions.
+Users should be able to repeatedly click equals and apply the last calculation
+to its result.
 
-Make number buttons write correct numbers to inputDisplay.
-
-Write logic for calculator.
-
-Users should be able to string multiple calculations together. The last answer
-should be used as the next input.
+Users should be able to change operator before hitting equals.
 
 Fix up an aesthetic for the whole thing.
 
 Decimals should be rounded for simplicity and to fit on the screen.
 
-Pressing = should not cause any problems.
-
 Pressing clear should clear all variables.
-
-Do not let a division by zero crash the calculator.
-
-Ensure that the decimal button works, but does not allow multiple decimals to be
-input for a single number.
 
 Add a backspace button that will delete a single character, but not alter
 variable values.
 
 Add keyboard support. Look to Wes Bos drumkit.
+
+I would largely start over, scrap the large ideas of matching Window's
+calculator functionallity, and stick to the requirements of the project. Maybe
+try to make this stand out with aesthetic...
