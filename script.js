@@ -30,6 +30,10 @@ const divide = document.getElementById("divide");
 one.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 1;
 });
@@ -37,6 +41,10 @@ one.addEventListener("click", function () {
 two.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 2;
 });
@@ -44,6 +52,10 @@ two.addEventListener("click", function () {
 three.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 3;
 });
@@ -51,6 +63,10 @@ three.addEventListener("click", function () {
 four.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 4;
 });
@@ -58,6 +74,10 @@ four.addEventListener("click", function () {
 five.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 5;
 });
@@ -65,6 +85,10 @@ five.addEventListener("click", function () {
 six.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 6;
 });
@@ -72,6 +96,10 @@ six.addEventListener("click", function () {
 seven.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 7;
 });
@@ -79,6 +107,10 @@ seven.addEventListener("click", function () {
 eight.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 8;
 });
@@ -86,6 +118,10 @@ eight.addEventListener("click", function () {
 nine.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 9;
 });
@@ -93,6 +129,9 @@ nine.addEventListener("click", function () {
 zero.addEventListener("click", function () {
   if (stateAwaitFirstInput === true) {
     inputDisplay.textContent = "";
+  } else if (stateAwaitNumber === true) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
   }
   inputDisplay.textContent += 0;
 });
@@ -103,29 +142,107 @@ decimal.addEventListener("click", function () {
   }
 });
 
-//Operation buttons
+//OPERATION BUTTONS
 equals.addEventListener("click", function () {
-  if (!stateAwaitFirstInput) {
+  if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      updateSecondNumber();
+      operate();
+      enableRepeat();
+    } else if (repeatPossible) {
+      resultToFirstNumber();
+      operate();
+    }
+
+    console.log(`result = ${result}`);
   }
 });
 
 add.addEventListener("click", function () {
-  if (!stateAwaitFirstInput) {
+  if (stateAwaitFirstOperator) {
+    updateFirstNumber();
+    operator = "+";
+    instateAwaitNumber();
+  } else if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      inputDisplay.textContent = "";
+      operate();
+      resultToFirstNumber();
+      operator = "+";
+      stateAwaitNumber;
+    } else if (repeatPossible) {
+      inputDisplay.textContent = "";
+      operator = "+";
+      disableRepeat();
+      resultToFirstNumber();
+      instateAwaitNumber();
+    }
   }
 });
 
 subtract.addEventListener("click", function () {
-  if (!stateAwaitFirstInput) {
+  if (stateAwaitFirstOperator) {
+    updateFirstNumber();
+    operator = "-";
+    instateAwaitNumber();
+  } else if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      inputDisplay.textContent = "";
+      operate();
+      resultToFirstNumber();
+      operator = "-";
+      stateAwaitNumber;
+    } else if (repeatPossible) {
+      inputDisplay.textContent = "";
+      operator = "-";
+      disableRepeat();
+      resultToFirstNumber();
+      instateAwaitNumber();
+    }
   }
 });
 
 multiply.addEventListener("click", function () {
-  if (!stateAwaitFirstInput) {
+  if (stateAwaitFirstOperator) {
+    updateFirstNumber();
+    operator = "*";
+    instateAwaitNumber();
+  } else if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      inputDisplay.textContent = "";
+      operate();
+      resultToFirstNumber();
+      operator = "*";
+      stateAwaitNumber;
+    } else if (repeatPossible) {
+      inputDisplay.textContent = "";
+      operator = "*";
+      disableRepeat();
+      resultToFirstNumber();
+      instateAwaitNumber();
+    }
   }
 });
 
 divide.addEventListener("click", function () {
-  if (!stateAwaitFirstInput) {
+  if (stateAwaitFirstOperator) {
+    updateFirstNumber();
+    operator = "/";
+    instateAwaitNumber();
+  } else if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      inputDisplay.textContent = "";
+      operate();
+      resultToFirstNumber();
+      operator = "/";
+      stateAwaitNumber;
+    } else if (repeatPossible) {
+      inputDisplay.textContent = "";
+      operator = "/";
+      disableRepeat();
+      resultToFirstNumber();
+      instateAwaitNumber();
+    }
   }
 });
 
@@ -142,18 +259,43 @@ let result = 0;
 let operator = "";
 
 //Function for calculator operations.
+function updateFirstNumber() {
+  firstNumber = inputDisplay.textContent;
+
+  console.log(`firstNumber = ${firstNumber}`);
+}
+
+function updateSecondNumber() {
+  secondNumber = inputDisplay.textContent;
+
+  console.log(`secondNumber = ${secondNumber}`);
+}
+
+function resultToFirstNumber() {
+  firstNumber = result;
+
+  console.log(`firstNumber = ${firstNumber}`);
+}
+
 function operate() {
   if (operator === "+") {
     result = +firstNumber + +secondNumber;
+    console.log(`${firstNumber} + ${secondNumber}`);
     return result;
   } else if (operator === "-") {
     result = +firstNumber - +secondNumber;
+    console.log(`${firstNumber} - ${secondNumber}`);
+
     return result;
   } else if (operator === "*") {
     result = +firstNumber * +secondNumber;
+    console.log(`${firstNumber} * ${secondNumber}`);
+
     return result;
-  } else if (operator === "÷") {
+  } else if (operator === "/") {
     result = +firstNumber / +secondNumber;
+    console.log(`${firstNumber} / ${secondNumber}`);
+
     return result;
   }
 }
@@ -164,31 +306,52 @@ let stateAwaitFirstOperator = false;
 let stateAwaitNumber = false;
 let stateAwaitNextOperator = false;
 
+let repeatPossible = false;
+
 //Functions for changing the state of the calculator.
 function instateAwaitFirstInput() {
   stateAwaitFirstInput = true;
   stateAwaitFirstOperator = false;
   stateAwaitNumber = false;
   stateAwaitNextOperator = false;
+
+  //console.log(`AwaitFirstInput`);
 }
 
 function instateAwaitFirstOperator() {
-  stateAwaitFirstInput = true;
-  stateAwaitFirstOperator = false;
+  stateAwaitFirstInput = false;
+  stateAwaitFirstOperator = true;
   stateAwaitNumber = false;
   stateAwaitNextOperator = false;
+
+  //console.log(`AwaitFirstOperator`);
 }
 
-function instateAwaitFirstOperator() {
-  stateAwaitFirstInput = true;
+function instateAwaitNumber() {
+  stateAwaitFirstInput = false;
   stateAwaitFirstOperator = false;
-  stateAwaitNumber = false;
+  stateAwaitNumber = true;
   stateAwaitNextOperator = false;
+
+  //console.log(`AwaitNumber`);
 }
 
-function instateAwaitFirstOperator() {
-  stateAwaitFirstInput = true;
+function instateAwaitNextOperator() {
+  stateAwaitFirstInput = false;
   stateAwaitFirstOperator = false;
   stateAwaitNumber = false;
-  stateAwaitNextOperator = false;
+  stateAwaitNextOperator = true;
+
+  //console.log(`AwaitNextOperator`);
+}
+
+function enableRepeat() {
+  repeatPossible = true;
+  console.log(`repeat enabled`);
+}
+
+function disableRepeat() {
+  repeatPossible = false;
+
+  console.log(`repeat disabled`);
 }
