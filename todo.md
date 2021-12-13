@@ -1,15 +1,17 @@
-Users should be able to repeatedly click equals and apply the last calculation
-to its result.
+TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
 
-Users should be able to change operator before hitting equals.
+Display operations as they are input and their result.
 
-Fix up an aesthetic for the whole thing.
+Write logic for clear and delete buttons.
+
+Write logic for signSwitch button.
 
 Decimals should be rounded for simplicity and to fit on the screen.
 
-Pressing clear should clear all variables.
-
-Add a backspace button that will delete a single character, but not alter
-variable values.
-
 Add keyboard support. Look to Wes Bos drumkit.
+
+Fix up an aesthetic for the whole thing.
+
+BUGS <<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>
+
+If 0. is used as input, the decimal disappears when numbers are input after it.

@@ -177,6 +177,8 @@ add.addEventListener("click", function () {
       resultToFirstNumber();
       instateAwaitNumber();
     }
+  } else if (stateAwaitNumber) {
+    operator = "+";
   }
 });
 
@@ -199,6 +201,8 @@ subtract.addEventListener("click", function () {
       resultToFirstNumber();
       instateAwaitNumber();
     }
+  } else if (stateAwaitNumber) {
+    operator = "-";
   }
 });
 
@@ -221,6 +225,8 @@ multiply.addEventListener("click", function () {
       resultToFirstNumber();
       instateAwaitNumber();
     }
+  } else if (stateAwaitNumber) {
+    operator = "*";
   }
 });
 
@@ -243,6 +249,8 @@ divide.addEventListener("click", function () {
       resultToFirstNumber();
       instateAwaitNumber();
     }
+  } else if (stateAwaitNumber) {
+    operator = "/";
   }
 });
 
