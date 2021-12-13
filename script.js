@@ -25,31 +25,115 @@ const subtract = document.getElementById("subtract");
 const multiply = document.getElementById("multiply");
 const divide = document.getElementById("divide");
 
-one.addEventListener("click", function () {});
+//Button logic
+//Number buttons
+one.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 1;
+});
 
-two.addEventListener("click", function () {});
+two.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 2;
+});
 
-three.addEventListener("click", function () {});
+three.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 3;
+});
 
-four.addEventListener("click", function () {});
+four.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 4;
+});
 
-five.addEventListener("click", function () {});
+five.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 5;
+});
 
-six.addEventListener("click", function () {});
+six.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 6;
+});
 
-seven.addEventListener("click", function () {});
+seven.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 7;
+});
 
-eight.addEventListener("click", function () {});
+eight.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 8;
+});
 
-nine.addEventListener("click", function () {});
+nine.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 9;
+});
 
-zero.addEventListener("click", function () {});
+zero.addEventListener("click", function () {
+  if (stateAwaitFirstInput === true) {
+    inputDisplay.textContent = "";
+  }
+  inputDisplay.textContent += 0;
+});
 
 decimal.addEventListener("click", function () {
-  if (!inputDisplay.textContent.includes(".") && repeat === false) {
+  if (!inputDisplay.textContent.includes(".")) {
     inputDisplay.textContent += ".";
   }
 });
+
+//Operation buttons
+equals.addEventListener("click", function () {
+  if (!stateAwaitFirstInput) {
+  }
+});
+
+add.addEventListener("click", function () {
+  if (!stateAwaitFirstInput) {
+  }
+});
+
+subtract.addEventListener("click", function () {
+  if (!stateAwaitFirstInput) {
+  }
+});
+
+multiply.addEventListener("click", function () {
+  if (!stateAwaitFirstInput) {
+  }
+});
+
+divide.addEventListener("click", function () {
+  if (!stateAwaitFirstInput) {
+  }
+});
+
+clear.addEventListener("click", function () {});
+
+del.addEventListener("click", function () {});
+
+signSwitch.addEventListener("click", function () {});
 
 //Variables for conducting calculations.
 let firstNumber = 0;
@@ -57,9 +141,7 @@ let secondNumber = 0;
 let result = 0;
 let operator = "";
 
-//Variables for indicating the state of the calculator.
-
-//Functions for calculator operations
+//Function for calculator operations.
 function operate() {
   if (operator === "+") {
     result = +firstNumber + +secondNumber;
@@ -76,16 +158,37 @@ function operate() {
   }
 }
 
-equals.addEventListener("click", function () {});
+//Variables for indicating the state of the calculator.
+let stateAwaitFirstInput = true;
+let stateAwaitFirstOperator = false;
+let stateAwaitNumber = false;
+let stateAwaitNextOperator = false;
 
-add.addEventListener("click", function () {});
+//Functions for changing the state of the calculator.
+function instateAwaitFirstInput() {
+  stateAwaitFirstInput = true;
+  stateAwaitFirstOperator = false;
+  stateAwaitNumber = false;
+  stateAwaitNextOperator = false;
+}
 
-subtract.addEventListener("click", function () {});
+function instateAwaitFirstOperator() {
+  stateAwaitFirstInput = true;
+  stateAwaitFirstOperator = false;
+  stateAwaitNumber = false;
+  stateAwaitNextOperator = false;
+}
 
-multiply.addEventListener("click", function () {});
+function instateAwaitFirstOperator() {
+  stateAwaitFirstInput = true;
+  stateAwaitFirstOperator = false;
+  stateAwaitNumber = false;
+  stateAwaitNextOperator = false;
+}
 
-divide.addEventListener("click", function () {});
-
-clear.addEventListener("click", function () {});
-
-del.addEventListener("click", function () {});
+function instateAwaitFirstOperator() {
+  stateAwaitFirstInput = true;
+  stateAwaitFirstOperator = false;
+  stateAwaitNumber = false;
+  stateAwaitNextOperator = false;
+}
