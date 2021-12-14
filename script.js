@@ -34,6 +34,10 @@ one.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 1;
 });
@@ -45,6 +49,10 @@ two.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 2;
 });
@@ -56,6 +64,10 @@ three.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 3;
 });
@@ -67,6 +79,10 @@ four.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 4;
 });
@@ -78,6 +94,10 @@ five.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 5;
 });
@@ -89,6 +109,10 @@ six.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 6;
 });
@@ -100,6 +124,10 @@ seven.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 7;
 });
@@ -111,6 +139,10 @@ eight.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 8;
 });
@@ -122,6 +154,10 @@ nine.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 9;
 });
@@ -132,6 +168,10 @@ zero.addEventListener("click", function () {
   } else if (stateAwaitNumber === true) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
   inputDisplay.textContent += 0;
 });
@@ -320,6 +360,15 @@ function operate() {
 
     return result;
   }
+}
+
+function clearAll() {
+  firstNumber = 0;
+  secondNumber = 0;
+  result = 0;
+  operator = "";
+  inputDisplay.textContent = "";
+  outputDisplay.textContent = "";
 }
 
 //Variables for indicating the state of the calculator.
