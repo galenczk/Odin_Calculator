@@ -1,5 +1,9 @@
-TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>> Make sure decimal works as an input
-to start new operations.
+TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
+
+After an operation is calculated, inputing a new number right away without
+adding an operator should clear variables and start a new calculation.
+
+Make sure decimal works as an input to start new operations.
 
 Display operations as they are input and their result.
 

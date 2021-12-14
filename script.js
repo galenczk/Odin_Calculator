@@ -195,12 +195,13 @@ subtract.addEventListener("click", function () {
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
+      updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
       displayCompleteOperation();
       resultToFirstNumber();
       operator = "-";
-      stateAwaitNumber;
+      instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
       operator = "-";
@@ -221,12 +222,13 @@ multiply.addEventListener("click", function () {
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
+      updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
       displayCompleteOperation();
       resultToFirstNumber();
       operator = "*";
-      stateAwaitNumber;
+      instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
       operator = "*";
@@ -247,11 +249,13 @@ divide.addEventListener("click", function () {
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
+      updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
+      displayCompleteOperation();
       resultToFirstNumber();
       operator = "/";
-      stateAwaitNumber;
+      instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
       operator = "/";
