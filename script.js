@@ -148,10 +148,12 @@ equals.addEventListener("click", function () {
     if (!repeatPossible) {
       updateSecondNumber();
       operate();
+      displayCompleteOperation();
       enableRepeat();
     } else if (repeatPossible) {
       resultToFirstNumber();
       operate();
+      displayCompleteOperation();
     }
 
     console.log(`result = ${result}`);
@@ -162,14 +164,17 @@ add.addEventListener("click", function () {
   if (stateAwaitFirstOperator) {
     updateFirstNumber();
     operator = "+";
+    displayFirstOperation();
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
+      updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
+      displayCompleteOperation();
       resultToFirstNumber();
       operator = "+";
-      stateAwaitNumber;
+      instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
       operator = "+";
@@ -186,11 +191,13 @@ subtract.addEventListener("click", function () {
   if (stateAwaitFirstOperator) {
     updateFirstNumber();
     operator = "-";
+    displayFirstOperation();
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
       inputDisplay.textContent = "";
       operate();
+      displayCompleteOperation();
       resultToFirstNumber();
       operator = "-";
       stateAwaitNumber;
@@ -210,11 +217,13 @@ multiply.addEventListener("click", function () {
   if (stateAwaitFirstOperator) {
     updateFirstNumber();
     operator = "*";
+    displayFirstOperation();
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
       inputDisplay.textContent = "";
       operate();
+      displayCompleteOperation();
       resultToFirstNumber();
       operator = "*";
       stateAwaitNumber;
@@ -234,6 +243,7 @@ divide.addEventListener("click", function () {
   if (stateAwaitFirstOperator) {
     updateFirstNumber();
     operator = "/";
+    displayFirstOperation();
     instateAwaitNumber();
   } else if (stateAwaitNextOperator) {
     if (!repeatPossible) {
@@ -323,7 +333,7 @@ function instateAwaitFirstInput() {
   stateAwaitNumber = false;
   stateAwaitNextOperator = false;
 
-  //console.log(`AwaitFirstInput`);
+  console.log(`AwaitFirstInput`);
 }
 
 function instateAwaitFirstOperator() {
@@ -332,7 +342,7 @@ function instateAwaitFirstOperator() {
   stateAwaitNumber = false;
   stateAwaitNextOperator = false;
 
-  //console.log(`AwaitFirstOperator`);
+  console.log(`AwaitFirstOperator`);
 }
 
 function instateAwaitNumber() {
@@ -341,7 +351,7 @@ function instateAwaitNumber() {
   stateAwaitNumber = true;
   stateAwaitNextOperator = false;
 
-  //console.log(`AwaitNumber`);
+  console.log(`AwaitNumber`);
 }
 
 function instateAwaitNextOperator() {
@@ -350,7 +360,7 @@ function instateAwaitNextOperator() {
   stateAwaitNumber = false;
   stateAwaitNextOperator = true;
 
-  //console.log(`AwaitNextOperator`);
+  console.log(`AwaitNextOperator`);
 }
 
 function enableRepeat() {
@@ -362,4 +372,16 @@ function disableRepeat() {
   repeatPossible = false;
 
   console.log(`repeat disabled`);
+}
+
+//Functions for displaying operations
+
+function displayFirstOperation() {
+  outputDisplay.textContent = `${firstNumber} ${operator}`;
+  inputDisplay.textContent = "";
+}
+
+function displayCompleteOperation() {
+  outputDisplay.textContent = `${firstNumber} ${operator} ${secondNumber} = `;
+  inputDisplay.textContent = result;
 }

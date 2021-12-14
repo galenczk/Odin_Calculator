@@ -1,4 +1,5 @@
-TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
+TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>> Make sure decimal works as an input
+to start new operations.
 
 Display operations as they are input and their result.
 
