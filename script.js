@@ -177,8 +177,22 @@ zero.addEventListener("click", function () {
 });
 
 decimal.addEventListener("click", function () {
-  if (!inputDisplay.textContent.includes(".")) {
-    inputDisplay.textContent += ".";
+  if (stateAwaitFirstInput === true) {
+    if (!inputDisplay.textContent.includes(".")) {
+      inputDisplay.textContent += ".";
+    }
+    instateAwaitFirstOperator();
+  } else if (stateAwaitFirstOperator) {
+    if (!inputDisplay.textContent.includes(".")) {
+      inputDisplay.textContent += ".";
+    }
+  } else if (repeatPossible) {
+    clearAll();
+    if (!inputDisplay.textContent.includes(".")) {
+      inputDisplay.textContent += ".";
+    }
+    instateAwaitFirstOperator();
+    disableRepeat();
   }
 });
 
@@ -367,7 +381,7 @@ function clearAll() {
   secondNumber = 0;
   result = 0;
   operator = "";
-  inputDisplay.textContent = "";
+  inputDisplay.textContent = 0;
   outputDisplay.textContent = "";
 }
 
