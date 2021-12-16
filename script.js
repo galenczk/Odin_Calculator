@@ -255,6 +255,7 @@ add.addEventListener("click", function () {
       operator = "+";
       disableRepeat();
       resultToFirstNumber();
+      displayFirstOperation();
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
@@ -282,6 +283,8 @@ subtract.addEventListener("click", function () {
       operator = "-";
       disableRepeat();
       resultToFirstNumber();
+      displayFirstOperation();
+
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
@@ -309,6 +312,8 @@ multiply.addEventListener("click", function () {
       operator = "*";
       disableRepeat();
       resultToFirstNumber();
+      displayFirstOperation();
+
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
@@ -336,6 +341,8 @@ divide.addEventListener("click", function () {
       operator = "/";
       disableRepeat();
       resultToFirstNumber();
+      displayFirstOperation();
+
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
