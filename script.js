@@ -36,6 +36,7 @@ one.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -51,6 +52,8 @@ two.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -66,6 +69,8 @@ three.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -81,6 +86,8 @@ four.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -96,6 +103,8 @@ five.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -111,6 +120,8 @@ six.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -126,6 +137,8 @@ seven.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -141,6 +154,8 @@ eight.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -156,6 +171,8 @@ nine.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
@@ -170,10 +187,14 @@ zero.addEventListener("click", function () {
     instateAwaitNextOperator();
   } else if (repeatPossible) {
     clearAll();
+    inputDisplay.textContent = "";
+
     instateAwaitFirstOperator();
     disableRepeat();
   }
-  inputDisplay.textContent += 0;
+  if (inputDisplay.textContent !== 0) {
+    inputDisplay.textContent += 0;
+  }
 });
 
 decimal.addEventListener("click", function () {
