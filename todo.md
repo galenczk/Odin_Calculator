@@ -1,4 +1,5 @@
-TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
+TO-DO
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
 
 Decimals should be rounded for simplicity and to fit on the screen.
 
@@ -9,4 +10,5 @@ seperating every three digits.
 
 Change any if (boolean === true) to just if(boolean)
 
-BUGS <<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>
+BUGS
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>
