@@ -1,5 +1,7 @@
-TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>> Display operations as they are input
-and their result.
+TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
+
+When chaining operations, the result of the last operation should be displayed
+as the first number in a new chain.
 
 Write logic for clear and delete buttons.
 
@@ -15,6 +17,3 @@ seperating every three digits.
 Change any if (boolean === true) to just if(boolean)
 
 BUGS <<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>
-
-Pressing a operator after a calculation has been completed should display the
-calculated result and the new operator.

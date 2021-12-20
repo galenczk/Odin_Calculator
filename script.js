@@ -246,9 +246,9 @@ add.addEventListener("click", function () {
       updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
-      displayCompleteOperation();
       resultToFirstNumber();
       operator = "+";
+      displayFirstOperation();
       instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
@@ -260,6 +260,7 @@ add.addEventListener("click", function () {
     }
   } else if (stateAwaitNumber) {
     operator = "+";
+    displayFirstOperation();
   }
 });
 
@@ -274,9 +275,10 @@ subtract.addEventListener("click", function () {
       updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
-      displayCompleteOperation();
       resultToFirstNumber();
       operator = "-";
+      displayFirstOperation();
+
       instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
@@ -284,11 +286,11 @@ subtract.addEventListener("click", function () {
       disableRepeat();
       resultToFirstNumber();
       displayFirstOperation();
-
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
     operator = "-";
+    displayFirstOperation();
   }
 });
 
@@ -303,9 +305,10 @@ multiply.addEventListener("click", function () {
       updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
-      displayCompleteOperation();
       resultToFirstNumber();
       operator = "*";
+
+      displayFirstOperation();
       instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
@@ -313,11 +316,11 @@ multiply.addEventListener("click", function () {
       disableRepeat();
       resultToFirstNumber();
       displayFirstOperation();
-
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
     operator = "*";
+    displayFirstOperation();
   }
 });
 
@@ -332,9 +335,10 @@ divide.addEventListener("click", function () {
       updateSecondNumber();
       inputDisplay.textContent = "";
       operate();
-      displayCompleteOperation();
       resultToFirstNumber();
       operator = "/";
+
+      displayFirstOperation();
       instateAwaitNumber();
     } else if (repeatPossible) {
       inputDisplay.textContent = "";
@@ -342,17 +346,42 @@ divide.addEventListener("click", function () {
       disableRepeat();
       resultToFirstNumber();
       displayFirstOperation();
-
       instateAwaitNumber();
     }
   } else if (stateAwaitNumber) {
     operator = "/";
+    displayFirstOperation();
   }
 });
 
-clear.addEventListener("click", function () {});
+clear.addEventListener("click", function () {
+  disableRepeat();
+  instateAwaitFirstOperator();
+  clearAll();
+});
 
-del.addEventListener("click", function () {});
+del.addEventListener("click", function () {
+  if (stateAwaitFirstOperator) {
+    inputDisplay.textContent = inputDisplay.textContent.slice(
+      0,
+      inputDisplay.textContent.length - 1,
+    );
+    if (!inputDisplay.textContent) {
+      inputDisplay.textContent = 0;
+      instateAwaitFirstInput();
+    }
+  } else if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      inputDisplay.textContent = inputDisplay.textContent.slice(
+        0,
+        inputDisplay.textContent.length - 1,
+      );
+      if (!inputDisplay.textContent) {
+        instateAwaitNumber();
+      }
+    }
+  }
+});
 
 signSwitch.addEventListener("click", function () {});
 
@@ -364,13 +393,13 @@ let operator = "";
 
 //Function for calculator operations.
 function updateFirstNumber() {
-  firstNumber = inputDisplay.textContent;
+  firstNumber = +inputDisplay.textContent;
 
   console.log(`firstNumber = ${firstNumber}`);
 }
 
 function updateSecondNumber() {
-  secondNumber = inputDisplay.textContent;
+  secondNumber = +inputDisplay.textContent;
 
   console.log(`secondNumber = ${secondNumber}`);
 }
@@ -428,7 +457,7 @@ function instateAwaitFirstInput() {
   stateAwaitNumber = false;
   stateAwaitNextOperator = false;
 
-  console.log(`AwaitFirstInput`);
+  console.log("AwaitFirstInput");
 }
 
 function instateAwaitFirstOperator() {
