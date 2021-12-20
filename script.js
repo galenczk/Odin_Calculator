@@ -28,10 +28,10 @@ const divide = document.getElementById("divide");
 //Button logic
 //Number buttons
 one.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -44,10 +44,10 @@ one.addEventListener("click", function () {
 });
 
 two.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -61,10 +61,10 @@ two.addEventListener("click", function () {
 });
 
 three.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -78,10 +78,10 @@ three.addEventListener("click", function () {
 });
 
 four.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -95,10 +95,10 @@ four.addEventListener("click", function () {
 });
 
 five.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -112,10 +112,10 @@ five.addEventListener("click", function () {
 });
 
 six.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -129,10 +129,10 @@ six.addEventListener("click", function () {
 });
 
 seven.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -146,10 +146,10 @@ seven.addEventListener("click", function () {
 });
 
 eight.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -163,10 +163,10 @@ eight.addEventListener("click", function () {
 });
 
 nine.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
     instateAwaitFirstOperator();
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -180,9 +180,9 @@ nine.addEventListener("click", function () {
 });
 
 zero.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     inputDisplay.textContent = "";
-  } else if (stateAwaitNumber === true) {
+  } else if (stateAwaitNumber) {
     inputDisplay.textContent = "";
     instateAwaitNextOperator();
   } else if (repeatPossible) {
@@ -198,7 +198,7 @@ zero.addEventListener("click", function () {
 });
 
 decimal.addEventListener("click", function () {
-  if (stateAwaitFirstInput === true) {
+  if (stateAwaitFirstInput) {
     if (!inputDisplay.textContent.includes(".")) {
       inputDisplay.textContent += ".";
     }

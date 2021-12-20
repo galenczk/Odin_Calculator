@@ -1,9 +1,5 @@
 TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
 
-Write logic for clear and delete buttons.
-
-Write logic for negate button.
-
 Decimals should be rounded for simplicity and to fit on the screen.
 
 Add keyboard support. Look to Wes Bos drumkit.
