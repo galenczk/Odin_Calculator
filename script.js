@@ -356,7 +356,7 @@ divide.addEventListener("click", function () {
 
 clear.addEventListener("click", function () {
   disableRepeat();
-  instateAwaitFirstOperator();
+  instateAwaitFirstInput();
   clearAll();
 });
 
