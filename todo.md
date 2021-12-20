@@ -1,11 +1,8 @@
 TO-DO <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
 
-When chaining operations, the result of the last operation should be displayed
-as the first number in a new chain.
-
 Write logic for clear and delete buttons.
 
-Write logic for signSwitch button.
+Write logic for negate button.
 
 Decimals should be rounded for simplicity and to fit on the screen.
 

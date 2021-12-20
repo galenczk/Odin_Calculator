@@ -383,7 +383,15 @@ del.addEventListener("click", function () {
   }
 });
 
-signSwitch.addEventListener("click", function () {});
+negate.addEventListener("click", function () {
+  if (stateAwaitFirstOperator) {
+    inputDisplay.textContent = -inputDisplay.textContent;
+    updateFirstNumber();
+  } else if (stateAwaitNextOperator) {
+    inputDisplay.textContent = -inputDisplay.textContent;
+    result = inputDisplay.textContent;
+  }
+});
 
 //Variables for conducting calculations.
 let firstNumber = 0;
@@ -393,13 +401,13 @@ let operator = "";
 
 //Function for calculator operations.
 function updateFirstNumber() {
-  firstNumber = +inputDisplay.textContent;
+  firstNumber = inputDisplay.textContent;
 
   console.log(`firstNumber = ${firstNumber}`);
 }
 
 function updateSecondNumber() {
-  secondNumber = +inputDisplay.textContent;
+  secondNumber = inputDisplay.textContent;
 
   console.log(`secondNumber = ${secondNumber}`);
 }
