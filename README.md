@@ -1,5 +1,5 @@
 Basic Calculator
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 A basic table-top calculator that can:
 
@@ -8,33 +8,27 @@ A basic table-top calculator that can:
 - repeat the last calculation on the new resulting value with each subsequent
   press of the equals button,
 - negate input numbers and results,
-- change
+- and change operator before second number has been input.
 
 This is a project from the tailend of The Odin Project's (TOP) Fundamentals
-curriculum. The TOP requirements are less than what this calculator can do. I
-was using the Windows calculator as an example while coding the logic for
-calculations. As I got the basics working, I became frustrated that my
-calculator couldn't do several basic functions that the Windows one could.
+curriculum. The TOP requirements are less than what this calculator can do.
+While writing the logic for calculations, I used the Windows calculator as an
+example. I became frustrated that my calculator could not do some of the basic
+functions listed above, that the Windows one could.
 
-For example, my calculator was not capable of repeating the last executed
-calculation upon subsequent presses of the equals button. It also had no negate
-function, could not change operator in the middle of an input, and could not
-begin a new calculation after completing one without pressing the clearAll
-button.
-
-I realized that I needed the buttons to perform different functions, depending
-on what step of the operation the user was inputing. At first, I spent several
-hours coding if-statements that checked the status of the several variables that
-were used in calculations. This quickly cluttered all of the button functions
-and required that I carefully edit the same lines across all similar
-button-types to modify features.
+The buttons of a calculator need to perfom different functions, depending on
+what step of the operation the user is inputing. At first, I spent several hours
+coding if-statements that checked the status of the several variables that were
+used in calculations. This quickly cluttered all of the button functions and
+required that I carefully edit the same lines across all similar button-types to
+modify features.
 
 After sleeping on this problem, I decided to use a series of variables as
-state-indicators. I added five variables and matching functions to enable each
-one and disable all others.
+"state-indicators". I used five variables and matching functions to enable each
+state and disable all others.
 
 Seperating the different functions of the buttons then simply relied on checking
-the status of these "states". This made the function blocks much cleaner and
+the status of these states. This made the function blocks much cleaner and
 readable. I was also able to call console.logs on these "state change" functions
 that would tell me what state had just been entered into. This was VERY useful
 later on for modifying button behavior in certain states when bugs were
