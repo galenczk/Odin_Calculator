@@ -1,20 +1,18 @@
 TO-DO
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
-Decimals should be rounded for simplicity and to fit on the screen.
+Add keyboard support. Change each button listener to simply a function. Create a
+click listener and keydown listener for each button that calls the button logic
+function.
 
-Add keyboard support. Look to Wes Bos drumkit.
-
-Make numbers display with commas seperating every three digits.
+Check if inputDisplay.length is larger than a certain number, return an error
+and return to initial state in this case.
 
 BUGS
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>
 
-Adding many numbers should not grow the calculator div. Rather, it should
-simplify into scientific notation. Or, perhaps, there should be a value, above
-which the calc returns an error?
+Adding too many digits to an input spills out past the calculator div.
 
 STYLE
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-make colors same saturation level
 
-make a backdrop to the buttons and a different look for the displays
+Add a wooden-grain background to the whole page, so it looks like a desk.

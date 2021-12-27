@@ -41,7 +41,176 @@ one.addEventListener("click", function () {
     disableRepeat();
   }
   inputDisplay.textContent += 1;
-  addCommasToInput();
+});
+
+two.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 2;
+});
+
+three.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 3;
+});
+
+four.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 4;
+});
+
+five.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 5;
+});
+
+six.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 6;
+});
+
+seven.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 7;
+});
+
+eight.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 8;
+});
+
+nine.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 9;
+});
+
+zero.addEventListener("click", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  if (inputDisplay.textContent !== 0) {
+    inputDisplay.textContent += 0;
+  }
+});
+//Number buttons for keyboard
+one.addEventListener("keypress", function () {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+  inputDisplay.textContent += 1;
 });
 
 two.addEventListener("click", function () {

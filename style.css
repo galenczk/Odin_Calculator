@@ -6,10 +6,11 @@ body {
 #calculatorDiv {
   border: solid 4px black;
   border-radius: 8px;
-  width: 300px;
+  width: 280px;
   height: 480px;
+  margin-top: 40px;
 
-  background-color: rgb(255, 255, 255);
+  background-color: hsl(102, 7%, 50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +19,7 @@ body {
 #displayDiv {
   text-align: end;
   margin: 8px;
-  background-color: rgb(214, 235, 255);
+  background-color: hsl(0, 0%, 75%);
 
   border: solid 2px black;
 }
@@ -68,22 +69,26 @@ body {
   color: rgb(133, 133, 133);
 }
 
+.button {
+  border-radius: 8px;
+}
+
 .numButton {
-  background-color: hsl(0, 0%, 82%);
+  background-color: hsl(0, 0%, 78%);
 }
 
 .opButton {
-  background-color: rgb(129, 190, 248);
+  background-color: hsl(209, 89%, 78%);
 }
 
 #clear {
-  background-color: rgb(255, 231, 65);
+  background-color: hsl(27, 100%, 78%);
 }
 
 #del {
-  background-color: lightsalmon;
+  background-color: hsl(0, 100%, 78%);
 }
 
 #equals {
-  background-color: lightgreen;
+  background-color: hsl(120, 73%, 78%);
 }
