@@ -1,6 +1,5 @@
 TO-DO
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
-
 Decimals should be rounded for simplicity and to fit on the screen.
 
 Add keyboard support. Look to Wes Bos drumkit.

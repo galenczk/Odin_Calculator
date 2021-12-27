@@ -6,6 +6,8 @@ body {
 #calculatorDiv {
   border: solid 4px black;
   border-radius: 8px;
+  width: 300px;
+  height: 480px;
 
   background-color: rgb(255, 255, 255);
   display: flex;

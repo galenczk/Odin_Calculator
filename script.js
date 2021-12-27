@@ -421,24 +421,24 @@ function resultToFirstNumber() {
 function operate() {
   if (operator === "+") {
     result = +firstNumber + +secondNumber;
-    console.log(`${firstNumber} + ${secondNumber}`);
-    return result;
+    result = roundToThree(result).toLocaleString("en-US");
   } else if (operator === "-") {
     result = +firstNumber - +secondNumber;
-    console.log(`${firstNumber} - ${secondNumber}`);
-
+    result = roundToThree(result).toLocaleString("en-US");
     return result;
   } else if (operator === "*") {
     result = +firstNumber * +secondNumber;
-    console.log(`${firstNumber} * ${secondNumber}`);
-
+    result = roundToThree(result).toLocaleString("en-US");
     return result;
   } else if (operator === "/") {
     result = +firstNumber / +secondNumber;
-    console.log(`${firstNumber} / ${secondNumber}`);
-
+    result = roundToThree(result).toLocaleString("en-US");
     return result;
   }
+}
+
+function roundToThree(num) {
+  return +(Math.round(num + "e+3") + "e-3");
 }
 
 function clearAll() {
