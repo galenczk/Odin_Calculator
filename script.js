@@ -41,6 +41,7 @@ one.addEventListener("click", function () {
     disableRepeat();
   }
   inputDisplay.textContent += 1;
+  addCommasToInput();
 });
 
 two.addEventListener("click", function () {
@@ -421,18 +422,18 @@ function resultToFirstNumber() {
 function operate() {
   if (operator === "+") {
     result = +firstNumber + +secondNumber;
-    result = roundToThree(result).toLocaleString("en-US");
+    result = roundToThree(result);
   } else if (operator === "-") {
     result = +firstNumber - +secondNumber;
-    result = roundToThree(result).toLocaleString("en-US");
+    result = roundToThree(result);
     return result;
   } else if (operator === "*") {
     result = +firstNumber * +secondNumber;
-    result = roundToThree(result).toLocaleString("en-US");
+    result = roundToThree(result);
     return result;
   } else if (operator === "/") {
     result = +firstNumber / +secondNumber;
-    result = roundToThree(result).toLocaleString("en-US");
+    result = roundToThree(result);
     return result;
   }
 }
