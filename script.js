@@ -27,10 +27,18 @@ const subtract = document.getElementById("subtract");
 const multiply = document.getElementById("multiply");
 const divide = document.getElementById("divide");
 
-//Checks if inputDisplay is too large.
+//Checks if inputDisplay or result is too large.
 function inputTooLarge() {
   if (inputDisplay.textContent.length > 12) {
     inputDisplay.textContent = "Display Exceeded!";
+    instateAwaitFirstInput();
+  }
+}
+
+function resultTooLarge() {
+  if (result > 999999999999) {
+    inputDisplay.textContent = "Exceeded!";
+    outputDisplay.textContent = "";
     instateAwaitFirstInput();
   }
 }
@@ -450,6 +458,7 @@ function displayFirstOperation() {
 function displayCompleteOperation() {
   outputDisplay.textContent = `${firstNumber} ${operator} ${secondNumber} = `;
   inputDisplay.textContent = result;
+  resultTooLarge();
 }
 
 //Function for keyboard use
