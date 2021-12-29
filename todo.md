@@ -1,16 +1,13 @@
 TO-DO
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>
-Add keyboard support. Change each button listener to simply a function. Create a
-click listener and keydown listener for each button that calls the button logic
-function.
+Use scientific notation to handle large numbers.
 
 Check if inputDisplay.length is larger than a certain number, return an error
 and return to initial state in this case.
 
 BUGS
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>
-
-Adding too many digits to an input spills out past the calculator div.
+Keyboard doesnt work for keys needing shift.
 
 STYLE
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

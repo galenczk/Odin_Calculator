@@ -3,6 +3,8 @@ const inputDisplay = document.getElementById("inputDisplay");
 const outputDisplay = document.getElementById("outputDisplay");
 inputDisplay.textContent = 0;
 
+const body = document.querySelector("body");
+
 //Number buttons assigned to variables.
 const one = document.getElementById("one");
 const two = document.getElementById("two");
@@ -25,158 +27,91 @@ const subtract = document.getElementById("subtract");
 const multiply = document.getElementById("multiply");
 const divide = document.getElementById("divide");
 
+//Checks if inputDisplay is too large.
+function inputTooLarge() {
+  if (inputDisplay.textContent.length > 12) {
+    inputDisplay.textContent = "Display Exceeded!";
+    instateAwaitFirstInput();
+  }
+}
+
 //Button logic
 //Number buttons
+function numberButtonLogic() {
+  if (stateAwaitFirstInput) {
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+  } else if (stateAwaitNumber) {
+    inputDisplay.textContent = "";
+    instateAwaitNextOperator();
+  } else if (repeatPossible) {
+    clearAll();
+    inputDisplay.textContent = "";
+    instateAwaitFirstOperator();
+    disableRepeat();
+  }
+}
+
 one.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
+  numberButtonLogic();
   inputDisplay.textContent += 1;
+  inputTooLarge();
 });
 
 two.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 2;
+  inputTooLarge();
 });
 
 three.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 3;
+  inputTooLarge();
 });
 
 four.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 4;
+  inputTooLarge();
 });
 
 five.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 5;
+  inputTooLarge();
 });
 
 six.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 6;
+  inputTooLarge();
 });
 
 seven.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 7;
+  inputTooLarge();
 });
 
 eight.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 8;
+  inputTooLarge();
 });
 
 nine.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
+  numberButtonLogic();
 
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
   inputDisplay.textContent += 9;
+  inputTooLarge();
 });
 
 zero.addEventListener("click", function () {
@@ -195,176 +130,7 @@ zero.addEventListener("click", function () {
   if (inputDisplay.textContent !== 0) {
     inputDisplay.textContent += 0;
   }
-});
-//Number buttons for keyboard
-one.addEventListener("keypress", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 1;
-});
-
-two.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 2;
-});
-
-three.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 3;
-});
-
-four.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 4;
-});
-
-five.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 5;
-});
-
-six.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 6;
-});
-
-seven.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 7;
-});
-
-eight.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 8;
-});
-
-nine.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-    instateAwaitFirstOperator();
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  inputDisplay.textContent += 9;
-});
-
-zero.addEventListener("click", function () {
-  if (stateAwaitFirstInput) {
-    inputDisplay.textContent = "";
-  } else if (stateAwaitNumber) {
-    inputDisplay.textContent = "";
-    instateAwaitNextOperator();
-  } else if (repeatPossible) {
-    clearAll();
-    inputDisplay.textContent = "";
-
-    instateAwaitFirstOperator();
-    disableRepeat();
-  }
-  if (inputDisplay.textContent !== 0) {
-    inputDisplay.textContent += 0;
-  }
+  inputTooLarge();
 });
 
 decimal.addEventListener("click", function () {
@@ -400,8 +166,6 @@ equals.addEventListener("click", function () {
       operate();
       displayCompleteOperation();
     }
-
-    console.log(`result = ${result}`);
   }
 });
 
@@ -687,3 +451,258 @@ function displayCompleteOperation() {
   outputDisplay.textContent = `${firstNumber} ${operator} ${secondNumber} = `;
   inputDisplay.textContent = result;
 }
+
+//Function for keyboard use
+
+body.addEventListener("keydown", function (event) {
+  if (event.repeat) {
+    return;
+  } else {
+    //Key for "1"
+    if (event.key === "1") {
+      numberButtonLogic();
+      inputDisplay.textContent += 1;
+    }
+    //Key for "2"
+    else if (event.key === "2") {
+      numberButtonLogic();
+      inputDisplay.textContent += 2;
+    }
+    //Key for "3"
+    else if (event.key === "3") {
+      numberButtonLogic();
+      inputDisplay.textContent += 3;
+    }
+    //Key for "4"
+    else if (event.key === "4") {
+      numberButtonLogic();
+      inputDisplay.textContent += 4;
+    }
+    //Key for "5"
+    else if (event.key === "5") {
+      numberButtonLogic();
+      inputDisplay.textContent += 5;
+    }
+    //Key for "6"
+    else if (event.key === "6") {
+      numberButtonLogic();
+      inputDisplay.textContent += 6;
+    }
+    //Key for "7"
+    else if (event.key === "7") {
+      numberButtonLogic();
+      inputDisplay.textContent += 7;
+    }
+    //Key for "8"
+    else if (event.key === "8") {
+      numberButtonLogic();
+      inputDisplay.textContent += 8;
+    }
+    //Key for "9"
+    else if (event.key === "9") {
+      numberButtonLogic();
+      inputDisplay.textContent += 9;
+    }
+    //Key for "0"
+    else if (event.key === "0") {
+      if (stateAwaitFirstInput) {
+        inputDisplay.textContent = "";
+      } else if (stateAwaitNumber) {
+        inputDisplay.textContent = "";
+        instateAwaitNextOperator();
+      } else if (repeatPossible) {
+        clearAll();
+        inputDisplay.textContent = "";
+
+        instateAwaitFirstOperator();
+        disableRepeat();
+      }
+      if (inputDisplay.textContent !== 0) {
+        inputDisplay.textContent += 0;
+      }
+    }
+    //Key for "decimal"
+    else if (event.key === ".") {
+      if (stateAwaitFirstInput) {
+        if (!inputDisplay.textContent.includes(".")) {
+          inputDisplay.textContent += ".";
+        }
+        instateAwaitFirstOperator();
+      } else if (stateAwaitFirstOperator) {
+        if (!inputDisplay.textContent.includes(".")) {
+          inputDisplay.textContent += ".";
+        }
+      } else if (repeatPossible) {
+        clearAll();
+        if (!inputDisplay.textContent.includes(".")) {
+          inputDisplay.textContent += ".";
+        }
+        instateAwaitFirstOperator();
+        disableRepeat();
+      }
+    }
+    //Key for "equals"
+    else if (event.key === "=") {
+      if (stateAwaitNextOperator) {
+        if (!repeatPossible) {
+          updateSecondNumber();
+          operate();
+          displayCompleteOperation();
+          enableRepeat();
+        } else if (repeatPossible) {
+          resultToFirstNumber();
+          operate();
+          displayCompleteOperation();
+        }
+      }
+    }
+    //Key for "add"
+    else if (event.shiftKey && event.key === "=") {
+      if (stateAwaitFirstOperator) {
+        updateFirstNumber();
+        operator = "+";
+        displayFirstOperation();
+        instateAwaitNumber();
+      } else if (stateAwaitNextOperator) {
+        if (!repeatPossible) {
+          updateSecondNumber();
+          inputDisplay.textContent = "";
+          operate();
+          resultToFirstNumber();
+          operator = "+";
+          displayFirstOperation();
+          instateAwaitNumber();
+        } else if (repeatPossible) {
+          inputDisplay.textContent = "";
+          operator = "+";
+          disableRepeat();
+          resultToFirstNumber();
+          displayFirstOperation();
+          instateAwaitNumber();
+        }
+      } else if (stateAwaitNumber) {
+        operator = "+";
+        displayFirstOperation();
+      }
+    }
+    //Key for "subtract"
+    else if (event.key === "-") {
+      if (stateAwaitFirstOperator) {
+        updateFirstNumber();
+        operator = "-";
+        displayFirstOperation();
+        instateAwaitNumber();
+      } else if (stateAwaitNextOperator) {
+        if (!repeatPossible) {
+          updateSecondNumber();
+          inputDisplay.textContent = "";
+          operate();
+          resultToFirstNumber();
+          operator = "-";
+          displayFirstOperation();
+
+          instateAwaitNumber();
+        } else if (repeatPossible) {
+          inputDisplay.textContent = "";
+          operator = "-";
+          disableRepeat();
+          resultToFirstNumber();
+          displayFirstOperation();
+          instateAwaitNumber();
+        }
+      } else if (stateAwaitNumber) {
+        operator = "-";
+        displayFirstOperation();
+      }
+    }
+    //Key for "multiply"
+    else if (event.shiftKey === true && event.key === "8") {
+      if (stateAwaitFirstOperator) {
+        updateFirstNumber();
+        operator = "*";
+        displayFirstOperation();
+        instateAwaitNumber();
+      } else if (stateAwaitNextOperator) {
+        if (!repeatPossible) {
+          updateSecondNumber();
+          inputDisplay.textContent = "";
+          operate();
+          resultToFirstNumber();
+          operator = "*";
+
+          displayFirstOperation();
+          instateAwaitNumber();
+        } else if (repeatPossible) {
+          inputDisplay.textContent = "";
+          operator = "*";
+          disableRepeat();
+          resultToFirstNumber();
+          displayFirstOperation();
+          instateAwaitNumber();
+        }
+      } else if (stateAwaitNumber) {
+        operator = "*";
+        displayFirstOperation();
+      }
+    }
+    //Key for "divide"
+    else if (event.key === "/") {
+      if (stateAwaitFirstOperator) {
+        updateFirstNumber();
+        operator = "/";
+        displayFirstOperation();
+        instateAwaitNumber();
+      } else if (stateAwaitNextOperator) {
+        if (!repeatPossible) {
+          updateSecondNumber();
+          inputDisplay.textContent = "";
+          operate();
+          resultToFirstNumber();
+          operator = "/";
+
+          displayFirstOperation();
+          instateAwaitNumber();
+        } else if (repeatPossible) {
+          inputDisplay.textContent = "";
+          operator = "/";
+          disableRepeat();
+          resultToFirstNumber();
+          displayFirstOperation();
+          instateAwaitNumber();
+        }
+      } else if (stateAwaitNumber) {
+        operator = "/";
+        displayFirstOperation();
+      }
+    }
+    //Key for "clearAll"
+    else if (event.key === "Delete") {
+      disableRepeat();
+      instateAwaitFirstInput();
+      clearAll();
+    }
+    //Key for "delete"
+    else if (event.key === "Backspace") {
+      if (stateAwaitFirstOperator) {
+        inputDisplay.textContent = inputDisplay.textContent.slice(
+          0,
+          inputDisplay.textContent.length - 1,
+        );
+        if (!inputDisplay.textContent) {
+          inputDisplay.textContent = 0;
+          instateAwaitFirstInput();
+        }
+      } else if (stateAwaitNextOperator) {
+        if (!repeatPossible) {
+          inputDisplay.textContent = inputDisplay.textContent.slice(
+            0,
+            inputDisplay.textContent.length - 1,
+          );
+          if (!inputDisplay.textContent) {
+            instateAwaitNumber();
+          }
+        }
+      }
+    }
+  }
+});
