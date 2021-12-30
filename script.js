@@ -178,122 +178,19 @@ equals.addEventListener("click", function () {
 });
 
 add.addEventListener("click", function () {
-  if (stateAwaitFirstOperator) {
-    updateFirstNumber();
-    operator = "+";
-    displayFirstOperation();
-    instateAwaitNumber();
-  } else if (stateAwaitNextOperator) {
-    if (!repeatPossible) {
-      updateSecondNumber();
-      inputDisplay.textContent = "";
-      operate();
-      resultToFirstNumber();
-      operator = "+";
-      displayFirstOperation();
-      instateAwaitNumber();
-    } else if (repeatPossible) {
-      inputDisplay.textContent = "";
-      operator = "+";
-      disableRepeat();
-      resultToFirstNumber();
-      displayFirstOperation();
-      instateAwaitNumber();
-    }
-  } else if (stateAwaitNumber) {
-    operator = "+";
-    displayFirstOperation();
-  }
+  operation("+");
 });
 
 subtract.addEventListener("click", function () {
-  if (stateAwaitFirstOperator) {
-    updateFirstNumber();
-    operator = "-";
-    displayFirstOperation();
-    instateAwaitNumber();
-  } else if (stateAwaitNextOperator) {
-    if (!repeatPossible) {
-      updateSecondNumber();
-      inputDisplay.textContent = "";
-      operate();
-      resultToFirstNumber();
-      operator = "-";
-      displayFirstOperation();
-
-      instateAwaitNumber();
-    } else if (repeatPossible) {
-      inputDisplay.textContent = "";
-      operator = "-";
-      disableRepeat();
-      resultToFirstNumber();
-      displayFirstOperation();
-      instateAwaitNumber();
-    }
-  } else if (stateAwaitNumber) {
-    operator = "-";
-    displayFirstOperation();
-  }
+  operation("-");
 });
 
 multiply.addEventListener("click", function () {
-  if (stateAwaitFirstOperator) {
-    updateFirstNumber();
-    operator = "*";
-    displayFirstOperation();
-    instateAwaitNumber();
-  } else if (stateAwaitNextOperator) {
-    if (!repeatPossible) {
-      updateSecondNumber();
-      inputDisplay.textContent = "";
-      operate();
-      resultToFirstNumber();
-      operator = "*";
-
-      displayFirstOperation();
-      instateAwaitNumber();
-    } else if (repeatPossible) {
-      inputDisplay.textContent = "";
-      operator = "*";
-      disableRepeat();
-      resultToFirstNumber();
-      displayFirstOperation();
-      instateAwaitNumber();
-    }
-  } else if (stateAwaitNumber) {
-    operator = "*";
-    displayFirstOperation();
-  }
+  operation("*");
 });
 
 divide.addEventListener("click", function () {
-  if (stateAwaitFirstOperator) {
-    updateFirstNumber();
-    operator = "/";
-    displayFirstOperation();
-    instateAwaitNumber();
-  } else if (stateAwaitNextOperator) {
-    if (!repeatPossible) {
-      updateSecondNumber();
-      inputDisplay.textContent = "";
-      operate();
-      resultToFirstNumber();
-      operator = "/";
-
-      displayFirstOperation();
-      instateAwaitNumber();
-    } else if (repeatPossible) {
-      inputDisplay.textContent = "";
-      operator = "/";
-      disableRepeat();
-      resultToFirstNumber();
-      displayFirstOperation();
-      instateAwaitNumber();
-    }
-  } else if (stateAwaitNumber) {
-    operator = "/";
-    displayFirstOperation();
-  }
+  operation("/");
 });
 
 clear.addEventListener("click", function () {
@@ -715,3 +612,34 @@ body.addEventListener("keydown", function (event) {
     }
   }
 });
+
+//Generic function for calculator operations
+
+function operation(sign) {
+  if (stateAwaitFirstOperator) {
+    updateFirstNumber();
+    operator = "sign";
+    displayFirstOperation();
+    instateAwaitNumber();
+  } else if (stateAwaitNextOperator) {
+    if (!repeatPossible) {
+      updateSecondNumber();
+      inputDisplay.textContent = "";
+      operate();
+      resultToFirstNumber();
+      operator = "sign";
+      displayFirstOperation();
+      instateAwaitNumber();
+    } else if (repeatPossible) {
+      inputDisplay.textContent = "";
+      operator = "sign";
+      disableRepeat();
+      resultToFirstNumber();
+      displayFirstOperation();
+      instateAwaitNumber();
+    }
+  } else if (stateAwaitNumber) {
+    operator = "sign";
+    displayFirstOperation();
+  }
+}
